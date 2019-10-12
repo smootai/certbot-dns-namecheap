@@ -2,11 +2,11 @@
 
 This plugin automates the process of completing a ``dns-01`` challenge by creating, and subsequently removing, TXT records using the (XML-RPC-based) namecheap.com API.
 
+------------------
+
 ## Presequence
 
 ### Getting API access
-
-------------------
 
 Namecheap has certain requirements for activation to prevent system abuse. In order to have API enabled for your account, you should meet one of the following requirements:
 
@@ -15,8 +15,6 @@ Namecheap has certain requirements for activation to prevent system abuse. In or
 - have at least $50 spent within the last 2 years.
 
 ## Credentials
-
-------------------
 
 Use of this plugin requires a configuration file containing Namecheap API credentials, obtained from your Namecheap account's [API Managenment page](https://ap.www.namecheap.com/settings/tools/apiaccess/).
 
