@@ -54,8 +54,8 @@ Examples
    :caption: To acquire a certificate for ``example.com``
 
    certbot certonly \\
-     -a certbot-dns-namecheap:dns-namecheap \\
-     --certbot-dns-namecheap:dns-namecheap-credentials= ~/.secrets/certbot/namecheap.ini \\
+     -a dns-namecheap \\
+     --dns-namecheap-credentials= ~/.secrets/certbot/namecheap.ini \\
      -d example.com
 
 .. code-block:: bash
@@ -63,8 +63,8 @@ Examples
              ``www.example.com``
 
    certbot certonly \\
-     -a certbot-dns-namecheap:dns-namecheap \\
-     --certbot-dns-namecheap:dns-namecheap-credentials= ~/.secrets/certbot/namecheap.ini \\
+     -a dns-namecheap \\
+     --dns-namecheap-credentials= ~/.secrets/certbot/namecheap.ini \\
      -d example.com
      -d www.example.com
 

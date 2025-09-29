@@ -1,8 +1,8 @@
 # General
 
-This plugin automates the process of completing a ``dns-01`` challenge by creating, and subsequently removing, TXT records using the (XML-RPC-based) namecheap.com API.
+This plugin automates the process of completing a `dns-01` challenge by creating, and subsequently removing, TXT records using the (XML-RPC-based) namecheap.com API.
 
-------------------
+---
 
 ## Presequence
 
@@ -38,12 +38,13 @@ docker run -it --rm \
   -v $(pwd)/logs:/var/log/letsencrypt \
   -v $(pwd)/namecheap.ini:/namecheap.ini \
   schubc/certbot-dns-namecheap certonly \
-  -a certbot-dns-namecheap:dns-namecheap \
-  --certbot-dns-namecheap:dns-namecheap-credentials=/namecheap.ini \
+  -a dns-namecheap \
+  --dns-namecheap-credentials=/namecheap.ini \
   --agree-tos \
+  --no-eff-email \
   -email "your@mail.com" \
   -d example.com \
-  --test-cert
+  --dry-run
 ```
 
 - After a successful run, remove the last parameter `--test-cert` which enabled [staging server](https://letsencrypt.org/docs/staging-environment/) and run again.
@@ -53,7 +54,7 @@ docker run -it --rm \
 - If you know what you're doing install the plugin into the same python environment like `certbot`. In any other case follow the `Docker` approach above:
 
 ```sh
-git clone https://github.com/iHamsterball/certbot-dns-namecheap.git
+git clone https://github.com/smootai/certbot-dns-namecheap.git
 pip install certbot-dns-namecheap/
 ```
 
@@ -67,10 +68,11 @@ certbot plugins
 
 ```sh
 certbot certonly \
-  -a certbot-dns-namecheap:dns-namecheap \
-  --certbot-dns-namecheap:dns-namecheap-credentials=/namecheap.ini \
+  -a dns-namecheap \
+  --dns-namecheap-credentials=/namecheap.ini \
   --agree-tos \
+  --no-eff-email \
   -email "your@mail.com" \
   -d example.com \
-  --test-cert
-  ```
+  --dry-run
+```
